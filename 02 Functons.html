@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+        
+  </script>
+</body>
+</html>
+
+
+<!--
+Anonymous functions:
+
+A function without a name is known as Anonymous function.
+
+ex: function(){
+    //code
+}
+
+
+Anonymous function are used to pass them as arguments to other functions.
+
+function f1(a){
+      // console.log(a);
+      a();
+    }
+
+    f1(function(){
+      console.log("Anonymous");
+    });
+
+
+We are going to use Anonymous functions a lot.
+
+
+var arrays = [10, 34, 64, 23];
+
+       for(var index=0; index<arrays.length; index++){
+         console.log(arrays[index]);
+       }
+
+
+var arrays = [10, 34, 64, 23];
+
+      // for(var index=0; index<arrays.length; index++){
+      //   console.log(arrays[index]);
+      // }
+      arrays.forEach(function(value){  //this is a way of calling anonymous function
+        console.log(value);
+      })
+
+
+var arrays = [10, 34, 64, 23];
+
+// for(var index=0; index<arrays.length; index++){
+//   console.log(arrays[index]);
+// }
+arrays.forEach(function(value, i){  //this is a way of calling anonymous function
+  console.log(value);
+  console.log(i);
+})
+
+Function Expressions:
+
+If we can refer an anonymous finction with a variable, then it is called Function Expression.
+
+function f1(x){
+      x();
+    }
+    function f2(y){
+      y();
+    }
+    function f3(z){
+      z();
+    }
+  //   f1(function(){
+  //     console.log("x");
+  //   }
+  // );
+  // f2(function(){
+  //     console.log("y");    //for x, y & z functions if we want motidy we can modify 
+  //   }                        them individually which takes a lot of time to process 
+  // );                         so in order to over come this problem we can use Expression Function.
+  // f3(function(){
+  //     console.log("z");    
+  //   }
+  // );
+  var fn = function(){
+    console.log("X8");
+  }
+  f1(fn);
+  f2(fn);
+  f3(fn);
+  fn = null;  //when we no longer want to use the function we can nullify the 
+  fn();       function by definying the n as null. after this even if we call 
+              fn function is undefined, removed from the memory.
+
+
+First Class Function:
+ 
+If any function that can be passed as an argument, can be stored in a variable, 
+can be returned as a returned value from another function, then these kind
+of function can be called as First class function.
+
+function f1(){
+          return function(){
+            console.log("returned function");
+          }
+        }
+
+        var x = f1();
+        x();
+        f1()();
+
+
+IFE Immediately Invoked Function Expression:
+
+If we want to be authomatically invoked and to be invoked only once, then we can use IFE`s.
+
+Syntax:
+
+(function (){
+  //logic
+}) ();
+
+
+(function(){
+          console.log("IFE`s 1");
+        }) ();
+        (function(){
+          console.log("IFE`s 2");
+        }) ();
+        (function(){
+          console.log("IFE`s 3");
+        }) ();
+        (function(){
+          console.log("IFE`s 4");
+        }) ();
+        (function(){
+          console.log("IFE`s 5");
+        }) ();
+        (function(){
+          console.log("IFE`s 6");
+        }) ();       
+-->

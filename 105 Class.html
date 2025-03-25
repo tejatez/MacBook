@@ -1,0 +1,46 @@
+<!--Create a Drop Down with different langauges and based on user sen]lection on a langauge, 
+display "Good Morning" to the specified langauge.-->
+<html>
+<head>
+
+</head>
+<body>
+<select id="myDropdown" onchange="userSelection">
+  <option value="option1">English</option>
+  <option value="option2">Spanish</option>
+  <option value="option3">French</option>
+  <option value="option4">Germany</option>
+  <option value="option5">Japanese</option>
+  <option value="option6">Chinease</option>
+</select>
+
+<h1 id="text"></h1>
+<img id="image" src="">
+
+<script>
+  function userSelection() {
+    var text = document.getElementById("text");
+    var langaugeselected = document.getElementById("myDropdown").value;
+    var image = document.getElementById("image");
+    //console.log("langaugeselected", langaugeselected);
+    switch(langaugeselected) {
+      case "option1": text.innerText = "Good Morning"; Image.src="HTML/Diditial Lync/download.jpeg"; break;
+      case "option2": text.innerText = "buen día"; break;
+      case "option3": text.innerText = "bonjour"; break;
+      case "option4": text.innerText = "Guten Morgen"; break;
+      case "option5": text.innerText = "おはよう"; break;
+      case "option6": text.innerText = "早上好"; break;
+      default: text.innerText = "Good Morning"; break;
+    };
+  };
+</script>
+</body>
+</html>
+
+
+<!--
+
+
+
+
+-->

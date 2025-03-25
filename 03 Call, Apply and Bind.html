@@ -1,0 +1,47 @@
+
+
+
+
+<!--
+Call, Apply and Bind:
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var A68481 = {
+      eid: 101,
+      name: "Srujosa",
+      getDetails: function(a,b,c,d){
+        console.log(arguments);
+        return this.eid + "\t" + this.name + "\t" + a + "\t" + b + "\t" + c + "\t" + d;     //return employee.eid + "\t" + employee.name (with this emoloyee.eid//name)
+      }                                         //we can access only employee details but with return this.eid + "\t" + this.name, we can access any employee eid and name.
+    }
+    
+    var A68482 = {
+      eid: 102,
+      name: "Tejosa",
+      empGrade: 4,
+    }
+
+    var arr=[10, 40, 23, 76, 9, 32];
+
+    
+    console.log(A68481.getDetails.call(A68482, arr[0], arr[4], arr[3], arr[2])); //array split and pass
+    console.log(A68481.getDetails.apply(A68482, arr)); //array internally split
+  </script>
+</body>
+</html>
+
+
+Call By Value:
+
+
+
+
+
+-->

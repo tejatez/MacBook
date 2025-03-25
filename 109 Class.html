@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management System</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; padding: 20px;}
+        .container {
+            max-width: 600px; margin: auto;
+        }
+        input, button {
+            margin: 5px; padding: 10px; width: 100%;
+        }
+        table {
+            width: 100%; margin-top: 20px; border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd; padding: 10px; text-align: left;
+        }
+        th {
+            background-color: #4CAF50; color: white; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Product Management System</h2>
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="text" id="Price" placeholder="Price">
+        <input type="text" id="Brand" placeholder="Brand">
+        <input type="text" id="ModelYear" placeholder="Year">
+        <input type="text" id="Orgin" placeholder="Country Of Orgin">
+        <input type="text" id="Category" placeholder="Category">
+        <button onclick="assproduct()">Add Product</button>
+
+        <h3>Product List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Brand</th>
+                    <th>Country of Orgin</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+        </table>
+    </div>
+
+
+    <script>
+        let products = [];
+        let idcounter = 1;
+
+        function addProduct() {
+            let name = document.getElementById("name").value;
+            let Price = document.getElementById("Price").value;
+            let Brand = document.getElementById("Brand").value;
+            let ModelYearname = document.getElementById("ModelYear").value;
+            let Orgin = document.getElementById("Orgin").value;
+            let Category = document.getElementById("Category").value;
+
+            if (name && Price && Brand && ModelYearname && Orgin && Category) {
+                products.push({ id: idcounter++, name, Price, Brand, ModelYearname, Orgin, Category});
+                displayproducts();
+                document.getElementById("name").value = "";
+                document.getElementById("Price").value = "";
+                document.getElementById("Brand").value = "";
+                document.getElementById("ModelYear").value = "";
+                document.getElementById("Orgin").value = "";
+                document.getElementById("Category").value = "";
+            }
+        }
+
+        function displayProducts() {
+            let table = document.getElementById("productTable");
+            table.innerHTML = "";
+            products.forEach((product, index) => {
+                table.innerHTML += ` 
+                <tr>
+                    <td>${product.id}</td>
+                    <td contenteditable="true" onblur="updateProduct(${index}, 'name', this.innerText)">${product.name}</td>
+                    <td contenteditable="true" onblur="updateProduct(${index}, 'price', this.innerText)")">${product.Price}</td>
+                    <td contenteditable="true" onblur="updateProduct(${index}, 'Brand', this.innerText)")">${product.Brand}</td>
+                    <td contenteditable="true" onblur="updateProduct(${index}, 'ModelYear', this.innerText)")">${product.ModelYear}</td>
+                    <td contenteditable="true" onblur="updateProduct(${index}, 'Orgin', this.innerText)")">${product.Orgin}</td>
+                    <td contenteditable="true" onblur="updateProduct(${index}, 'Category', this.innerText)")">${product.Category}</td>
+                    <td><button onclick="deleteProduct(${index})">Delete</button></td>
+                </tr>
+                `;
+            });
+        }
+
+        function updateProduct(index, element, field) {
+            products[index][field] = element.innerHTML;
+            displayProducts();
+        }
+
+        function deleteProduct(index){
+            products.splice(index, 1);
+            displayProducts();
+        }
+    </script>
+</body>
+</html>
+
+<!--
+Problem Statement:
+
+Implement Product management system using javascript.
+
+1. Add Product
+2. Update product (Task)
+3. List all products
+4. Delete Products (Task)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management System</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        input, button { margin: 5px; padding: 10px; width: 100%; }
+        table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #4CAF50; color: white; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Product Management System</h2>
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="number" id="price" placeholder="Price">
+        <input type="text" id="category" placeholder="Category">
+        <button onclick="addProduct()">Add Product</button>
+        <button onclick="sortProducts()">Sort Products (A-Z)</button>
+        
+        <h3>Product List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th onclick="sortProducts()">Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+        </table>
+    </div>
+
+    <script>
+        let products = [];
+        let idCounter = 1;
+
+        function addProduct() {
+            let name = document.getElementById("name").value;
+            let price = document.getElementById("price").value;
+            let category = document.getElementById("category").value;
+            
+            if (name && price && category) {
+                products.push({ id: idCounter++, name, price, category });
+                sortProducts();
+                displayProducts();
+                document.getElementById("name").value = "";
+                document.getElementById("price").value = "";
+                document.getElementById("category").value = "";
+            }
+        }
+
+        function displayProducts() {
+            let table = document.getElementById("productTable");
+            table.innerHTML = "";
+            products.forEach((product, index) => {
+                table.innerHTML += `
+                    <tr>
+                        <td>${product.id}</td>
+                        <td contenteditable="true" onblur="updateProduct(${index}, this, 'name')">${product.name}</td>
+                        <td contenteditable="true" onblur="updateProduct(${index}, this, 'price')">${product.price}</td>
+                        <td contenteditable="true" onblur="updateProduct(${index}, this, 'category')">${product.category}</td>
+                        <td><button onclick="deleteProduct(${index})">Delete</button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function updateProduct(index, element, field) {
+            products[index][field] = element.innerText;
+            sortProducts();
+            displayProducts();
+        }
+
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            displayProducts();
+        }
+
+        function sortProducts() {
+            products.sort((a, b) => a.name.localeCompare(b.name));
+            displayProducts();
+        }
+    </script>
+</body>
+</html>
+
+-->

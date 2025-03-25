@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 300px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+        }
+        button {
+            background: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #productDisplay {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Create Product</h2>
+    
+    <form id="productForm">
+        <label>Product Name:</label>
+        <input type="text" id="productName" required>
+        
+        <label>Price ($):</label>
+        <input type="number" id="productPrice" required>
+        
+        <label>Category:</label>
+        <select id="productCategory">
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Food">Food</option>
+        </select>
+        
+        <label>Description:</label>
+        <textarea id="productDescription"></textarea>
+        
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h3>Product Details:</h3>
+    <div id="productDisplay"></div>
+
+    <script>
+        document.getElementById("productForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent page refresh
+
+            let name = document.getElementById("productName").value;
+            let price = document.getElementById("productPrice").value;
+            let category = document.getElementById("productCategory").value;
+            let description = document.getElementById("productDescription").value;
+
+            let productHTML = `
+                <h4>${name}</h4>
+                <p><strong>Price:</strong> $${price}</p>
+                <p><strong>Category:</strong> ${category}</p>
+                <p><strong>Description:</strong> ${description}</p>
+                <hr>
+            `;
+
+            document.getElementById("productDisplay").innerHTML += productHTML;
+
+            // Clear form fields
+            document.getElementById("productForm").reset();
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+Switch Case: 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <select id="f1" onchange="Naistam">
+    <option value="Mclaren">Lecardo</option>
+    <option value="Redbull">Max Vershthappen</option>
+    <option value="Ferarri">Hamilton</option>
+    <option value="Hass">Ricardo</option>
+  </select>
+ 
+  <script>
+    function Naistam() {
+      var selectionf1driver = document.getElementById("f1").value;
+      var list = document.getElementById("text");
+      var image = document.getElementById("image");
+
+      switch(selectionf1driver) {
+                case "Mclren": console.log("Borling"); break;
+                case "Redbull": console.log("Reading Bible"); break;
+                case "Ferarri": console.log("Cleaning"); break;
+                case "Hass": console.log("Confused"); break;
+                default : console.log("Pichi Ekkindi"); break;
+      };
+    };
+  </script>
+</body>
+</html>
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+
+Iterative Statements:
+  
+  - While Loop
+  
+   let i = 1;
+    while(i<=10) {
+      console.log(i);
+      i++;
+    }
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+//Problem display the list of participats on console
+    var participants = ["Rajesh", "Ramesh", "Suresh", "Mahesh", "Naresh"];
+    var index = 0;
+    while(index <= participants.length) {
+      console.log(participants[index]);
+      index++;
+    };
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+<body>
+  <ol id="list">
+
+  </ol>
+  <script>
+    //Problem display the list of participats on UI
+    var participants = ["Rajesh", "Ramesh", "Suresh", "Mahesh", "Naresh", "Srujosa", "Tejosa", "Bangaram", "Bujji",];
+    var index = 0;
+    var listitems = "";
+
+    while(index < participants.length) {
+      listitems = listitems + "<li>" + participants[index] + "</li>";
+      index++;
+    };
+    console.log(listitems);
+    list.innerHTML = listitems;
+  </script>
+</body>
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+  Example: Keep asking for a correct password until the user enters the right one.
+  let correctPassword = "1234";
+let userInput = prompt("Enter your password:");
+
+while (userInput !== correctPassword) {
+  alert("Incorrect password! Try again.");
+  userInput = prompt("Enter your password:");
+}
+
+alert("Access granted!");
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+  
+
+- Do While Loop
+  - For Loop
+-->

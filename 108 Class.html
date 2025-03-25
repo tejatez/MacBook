@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      function f1(a,b){
+        console.log(a);
+        console.log(b);
+      }
+      f1();
+    </script>
+</body>
+</html>
+
+
+<!--
+Jump Statements:
+
+Break, Return and Continue
+
+Break:
+    Break is used to terminate a block of code
+    Use Case: We use in switch case to come out of switch block.
+
+Return:
+
+    Return is also used to return some value from a function.
+    Return also can be used to terminate function. 
+
+
+`function authenticate(username, password) {
+
+      if(username == "digital" && password == "12345"){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function Login(username, password){
+      var isTrue = authenticate(username, password);
+      if(isTrue){
+        console.log("Success")
+      } else {
+        console.log("Fail")
+      }
+    }
+
+    Login("digital", "12348")
+    
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+
+
+
+Continue: 
+
+If we want to skip iteration, then we can use continue.
+
+<script>
+    var users = ["Srujosa", "Tejosa", "Tejosa", "Peh", "Peh", "Uwu", "Meow", "Srujosa", "Peh"];
+    var tempArray = [];
+    for (var i=0; i<users.length; i++) {
+      if (tempArray.includes(users[i])) {
+        continue;
+      }
+      tempArray.push(users[i]);
+    }
+
+    console.log(tempArray); 
+  </script>
+
+
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+
+
+
+Functions:
+
+A Function a block of code, takes an input(optional), process the code as provides some results.
+
+We use functions to provide functionality.
+
+<body>
+  Enter email <input type="text" id="email">
+      <button onclick="sendemail()">Send Email</button>
+  <script>
+    function sendemail(){
+      let email = document.getElementById("email").value;
+      console.log("Email sent to :" + email);
+    }
+  </script>
+</body>
+
+
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+-----------------------------------------------------------------------------------------------------------------------   
+
+-->

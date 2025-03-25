@@ -1,0 +1,217 @@
+<html lang="en">
+<head>
+</head>
+<body>
+    <label for=""> Srujosa Mood
+    <input type="number" id="age"><br><br><br><br>
+    <button onclick="submit()">Submit</button><br>
+  </label>
+  <h1 id="text"></h1>
+  <img id="image" src="">
+  <script>
+    function submit(){
+              var age = document.getElementById("age").value;
+              var list = document.getElementById("text");
+              var image = document.getElementById("image");
+              switch(age) {
+                case "1": console.log("Borling"); image.src="HTML/Diditial Lync/mclaren.webp"; break;
+                case "2": console.log("Reading Bible"); image.src="/Users/saiteja/Downloads/Coding/HTML/Diditial Lync/vestappen.jpg"; break;
+                case "3": console.log("Cleaning"); break;
+                case "4": console.log("Confused"); break;
+                case "5": console.log("Chatting"); break;
+                case "6": console.log("Listening Songs"); break;
+                case "7": console.log("Prayer"); break;
+                default : console.log("Pichi Ekkindi"); break;
+              };
+          };
+  </script>
+</body>
+</html>
+
+
+
+
+<!--
+Operators:
+An Operators is a symbol or a keyword that is used to provide functionality.
+
+Ex: +, -, *, \, typeof, instaanceof, ?, <, >, .............
+
+1. Arithmetic Operators:
++, *, -, %(remainder), ++, --
+
+var a=100;
+      a++; //post increment
+      ++a; //pre increment
+      a--; //post decrement
+      --a; //pre decrement
+
+      console.log(a);
+
+      var a=100, b='2', c=20;
+      console.log(a+b+c); //100220
+      console.log(c+b+a); //202100
+      console.log(b+c+a); //220100
+      console.log(a*b); //200
+      console.log(c*b); //40
+      console.log(a-b);
+      console.log(a/b);
+      console.log(a-b/c);
+      console.log(a+c/a-b*a*b);    
+
+-------------------------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------------------    
+
+2. Comparision Operators;
+<; >; <=, =>, ==, ===, !=, ?;
+
+var a=100, b=2, c='30', d=100;
+    //console.log(a == d);
+    //console.log(a < b == d);
+    //console.log(a == b >= d <= a == b < a);
+    console.log(a = d);
+    console.log(a === d);
+    a < b? 
+    console.log("a is less than b") : console.log("a is greater than b");
+
+    //Problem: Create A logon form with User name and Password, validate user name and password with dumy values and display the alert with results
+    var Username = 'Srujosa';
+    var password = '0912';
+    Username == "Srujosa" && password == "0912" ? alert("Login Sucess"): alert("Login Failed");
+    
+-------------------------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------------------    
+
+3. Logical Operators
+
+Logical AND(&&), OR(||), NOT(!)
+
+var a=100, b=2, c='30', d=100;
+    console.log(a > b && b > c);
+    console.log(a > b || b > c);
+    console.log(!true);
+    console.log(!false);
+
+    var Username = 'Srujosa';
+    var mobile = 8374895076;
+    var password = '0912';
+    Username == "Srujosa" || mobile == 837489 && password == "0912" ? alert("Login Sucess"): alert("Login Failed");    
+
+-------------------------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------------------    
+-------------------------------------------------------------------------------------------------------------------------------------------    
+
+CONTROL STATEMENTS:
+
+There are 3 types of Control Statements
+1. Sequential: if, if-else, switch
+2. Iterative: while, de-while, for 
+3. Jump: continue, return, break
+
+
+Sequential: 
+
+if: syntax:
+
+if(test-condition) {
+  //Code
+};
+
+var isworkdone = true;
+
+    if(isworkdone == true){
+      console.log("Work is finished");
+    };
+
+<html lang="en">
+      <head>
+      </head>
+      <body>
+          <input type="number" id="age"><br><br><br><br>
+          <button onclick="submit()">Submit</button><br>
+        <script>
+          //Problem: Ask the user to type age, if age is > or = to 18, Alert user "Eligible to vote"
+          function submit(){
+              var age = document.getElementById("age").value;
+              if(age >= 18) {
+                alert("Eligible for Vote");
+              } else {
+                alert("Not Eligible");
+              };
+          };
+        </script>
+      </body>
+      </html>    
+
+
+If-Else:
+
+<!--
+<html lang="en">
+      <head>
+      </head>
+      <body>
+          <input type="number" id="age"><br><br><br><br>
+          <button onclick="submit()">Submit</button><br>
+        <script>
+          //Problem: Ask the user to type age, if age is > or = to 18, Alert user "Eligible to vote"
+          function submit(){
+              var age = document.getElementById("age").value;
+              if(age >= 18) {
+                alert("Eligible for Vote");
+              } else {
+                alert("Not Eligible");
+              };
+          };
+        </script>
+      </body>
+      </html>    
+
+
+Switch:
+
+If we have more than two conditions, then we use switch case.
+
+Syntax:
+
+switch(test-condition) {
+  case case_value1
+  case case_value2
+  case case_value3
+  case case_value4
+  .
+  .
+  .
+  .
+  default case_value
+}
+
+<html lang="en">
+<head>
+</head>
+<body>
+    <label for=""> Srujosa Mood
+    <input type="number" id="age"><br><br><br><br>
+    <button onclick="submit()">Submit</button><br>
+  </label>
+  <script>
+    function submit(){
+              var age = document.getElementById("age").value;
+              switch(age) {
+                case "1": console.log("Borling"); break;
+                case "2": console.log("Reading Bible"); break;
+                case "3": console.log("Cleaning"); break;
+                case "4": console.log("Confused"); break;
+                case "5": console.log("Chatting"); break;
+                case "6": console.log("Listening Songs"); break;
+                case "7": console.log("Prayer"); break;
+                default : console.log("Pichi Ekkindi"); break;
+              };
+          };
+  </script>
+</body>
+</html>
+
+-->   
